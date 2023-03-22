@@ -17,9 +17,6 @@ export class BlogController {
     createBlog(@GetUser('id') userId: string,
         @Body() dto: CreateBlogDto,) {
 
-        console.log({
-            id: userId
-        })
         return this.blogService.createBlog(userId, dto);
     }
     @Get(':id')

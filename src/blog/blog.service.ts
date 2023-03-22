@@ -42,9 +42,6 @@ export class BlogService {
         if (!blog || blog.authorId !== userId) {
             throw new ForbiddenException('Access to resource denied');
         }
-        console.log({
-            dto,
-        })
         return this.prisma.blog.update({
             where: {
                 id: blogId
